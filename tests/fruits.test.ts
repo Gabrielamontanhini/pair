@@ -19,9 +19,6 @@ describe("/POST fruits", () => {
 
 describe("/GET fruits", () => {
     it("should return all fruits", async () => {
-
-
-
         const { status, body } = await api.get("/fruits");
         expect(status).toBe(200);
         expect(body).toEqual(expect.arrayContaining([
@@ -31,5 +28,11 @@ describe("/GET fruits", () => {
               price: expect.any(Number)
             })
           ]))
+    })
+
+
+    it("should return status 400 when id not a valid number", async()=> {
+        const { status } = await api.get("/fruits/potato");
+        expect(status).toBe(400);
     })
 })
