@@ -15,6 +15,8 @@ describe("/POST fruits", () => {
           const { status } = await api.post("/fruits").send(fruit);
           expect(status).toBe(201);
     })
+
+
 })
 
 describe("/GET fruits", () => {
@@ -35,4 +37,6 @@ describe("/GET fruits", () => {
         const { status } = await api.get("/fruits/NaN");
         expect(status).toBe(400);
     })
+
+
 })
