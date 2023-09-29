@@ -32,7 +32,7 @@ describe("/GET fruits", () => {
 
 
     it("should return status 400 when id not a valid number", async()=> {
-        const { status } = await api.get("/fruits/potato");
+        const { status } = await api.get("/fruits/NaN");
         expect(status).toBe(400);
     })
 })
